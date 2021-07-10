@@ -1,4 +1,7 @@
-﻿@{
+﻿@model ProctoringWebApp.ViewModels.QuestionViewModel;
+
+@{var questionList = Model.QuestionList;}
+@{
     Layout = null;
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -6,6 +9,10 @@
 
 <link href="~/css/session.css" rel="stylesheet" />
 
+@foreach(var data in questionList)
+            {
+                <p>@data.QuestionDescription</p>
+            }
 
 <div class="container" oncontextmenu="return false">
     <div class="question_box">
