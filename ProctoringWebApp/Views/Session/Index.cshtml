@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<link href="~/css/session.css" rel="stylesheet" />
+
+
+<div class="container" oncontextmenu="return false">
+    <div class="question_box">
+        What is Object Oriented Programming?
+    </div>
+    <div class="answer">
+        <div class="answer-box">
+            <div id="myDIV">
+                <textarea name="" cols="60" placeholder="Write your answer here" rows="10" id="phraseDiv"></textarea>
+            </div>
+
+            <div class="mic">
+                <button id="startRecognizeOnceAsyncButton">Start recognition</button>
+                <a href="#"><i class="fas fa-microphone"></i></i></a>
+            </div>
+        </div>
+        <button onclick="myFunction()" class="hidebtn">Hide Answer</button>
+        <button onclick="myFunction1()" class="showbtn" type="submit">Show Answer</button>
+    </div>
+    <input id="subscriptionKey" type="text" size="40" value="33a7541b31684aa28d95fb9380bedd42" hidden>
+    <input id="serviceRegion" type="text" size="40" value="eastus" hidden>
+    <button type="submit" class="btn btn-primary">Submit  Answer</button>
+
+</div>
+<script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction1() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+    }
+</script>
+<script src="~/js/session.js"></script>
