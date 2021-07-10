@@ -11,13 +11,13 @@ namespace ProctoringWebApp.Controllers
     {
         public IActionResult Index(int id)
         {
-            var questionList = new List<QuestionViewModel>()
-            {
+            var questionList = 
+            
                 new QuestionViewModel()
                 {
                     Semester=6,
                     SubjectCode="CSC-204",
-                    QuestionList=new List<QuestionDetails>()
+                    QuestionList= new List<QuestionDetails>()
                     {
                         new QuestionDetails()
                         {
@@ -50,7 +50,6 @@ namespace ProctoringWebApp.Controllers
                             QuestionDescription="explain about function overloading"
                         }
                     }
-                }
 
             };
             return View(questionList);
