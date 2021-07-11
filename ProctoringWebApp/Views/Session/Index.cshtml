@@ -9,34 +9,50 @@
 
 <link href="~/css/session.css" rel="stylesheet" />
 
-@foreach(var data in questionList)
-            {
-                <p>@data.QuestionDescription</p>
-            }
 
-<div class="container" oncontextmenu="return false">
-    <div class="question_box">
-        What is Object Oriented Programming?
-    </div>
-    <div class="answer">
-        <div class="answer-box">
-            <div id="myDIV">
-                <textarea name="" cols="60" placeholder="Write your answer here" rows="10" id="phraseDiv"></textarea>
-            </div>
 
-            <div class="mic">
-                <button id="startRecognizeOnceAsyncButton">Start recognition</button>
-                <a href="#"><i class="fas fa-microphone"></i></i></a>
-            </div>
-        </div>
-        <button onclick="myFunction()" class="hidebtn">Hide Answer</button>
-        <button onclick="myFunction1()" class="showbtn" type="submit">Show Answer</button>
-    </div>
-    <input id="subscriptionKey" type="text" size="40" value="33a7541b31684aa28d95fb9380bedd42" hidden>
-    <input id="serviceRegion" type="text" size="40" value="eastus" hidden>
-    <button type="submit" class="btn btn-primary">Submit  Answer</button>
-
+<div class="alert alert-warning">
+    <strong>Warning!</strong>Don't try to leave  until you save ypur changes and don't perform any action that may lead to cancellation of your exam"
 </div>
+<div class="container-session" style="display:flex">
+    <div class="question-session" style=" width: 35%; margin-top: 5%;">
+        @foreach (var data in questionList)
+        {
+            <p style="margin-left:10px">@data.QuestionDescription</p>
+        }
+    </div>
+    <div class="answer-section">
+        <div class="container" oncontextmenu="return false">
+            <div class="question_box">
+                What is Object Oriented Programming?
+            </div>
+            <div class="answer">
+                <div class="answer-box">
+                    <div id="myDIV">
+                        <textarea name="" cols="60" placeholder="Write your answer here" rows="10" id="phraseDiv"></textarea>
+                    </div>
+
+                    <div class="mic">
+                        <button id="startRecognizeOnceAsyncButton">Start recognition</button>
+                        <a href="#"><i class="fas fa-microphone"></i></i></a>
+                    </div>
+                </div>
+                <button onclick="myFunction()" class="hidebtn">Hide Answer</button>
+                <button onclick="myFunction1()" class="showbtn" type="submit">Show Answer</button>
+            </div>
+            <input id="subscriptionKey" type="text" size="40" value="33a7541b31684aa28d95fb9380bedd42" hidden>
+            <input id="serviceRegion" type="text" size="40" value="eastus" hidden>
+            <button type="submit" class="btn btn-primary">Submit  Answer</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
 <script>
     function myFunction() {
@@ -54,5 +70,14 @@
             x.style.display = "block";
         }
     }
+</script>
+<script>
+    window.addEventListener("beforeunload", function (e) {
+        var confirmationMessage = 'It looks like you have been editing something. '
+            + 'If you leave before saving, your changes will be lost.';
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    });
 </script>
 <script src="~/js/session.js"></script>
